@@ -34,7 +34,7 @@ Django News App is a web application built with Django that fetches and displays
 2. Navigate to the project directory:
 
     ```bash
-    cd newsAPI
+    cd newsApi
     ```
 
 3. Install the required packages:
