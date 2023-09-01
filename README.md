@@ -43,13 +43,18 @@ Django News App is a web application built with Django that fetches and displays
     pip install -r requirements.txt
     ```
 
-4. Run the Django development server:
+4. Navigate to the project directory:
+
+    ```bash
+    cd news_api_project
+
+5. Run the Django development server:
 
     ```bash
     python manage.py runserver
     ```
 
-5. Open your browser and go to `http://localhost:8000/`.
+6. Open your browser and go to `http://localhost:8000/`.
 
 ## Usage
 
