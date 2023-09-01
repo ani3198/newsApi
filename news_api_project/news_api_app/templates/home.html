@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}News App{% endblock %}</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+      .height {
+        height: 20vh;
+      }
+
+      /* Updated styles for alignment */
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh; /* Adjust as needed */
+      }
+
+      .header-content {
+        text-align: center;
+        margin-top: 20px; /* Adjust spacing between image and search box */
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'nav_bar.html' %}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <header>
+      <div class="container">
+        <div class="header-container">
+          <div class="header-content">
+            <img src="{% static 'emergo.png' %}">
+            {% include 'search_bar.html' %}
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html>

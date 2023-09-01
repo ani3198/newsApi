@@ -1,0 +1,199 @@
+{% load static %}
+<header>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: #24252A;
+        }
+
+        .navbar-select {
+            width: auto;
+            height: 34px;
+        }
+
+        li,
+        a,
+        button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #edf0f1;
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 30px 10%;
+        }
+
+        .logo {
+            cursor: pointer;
+            margin-right: auto;
+        }
+
+        .nav_wrapper {
+            display: flex;
+        }
+
+        .nav__links {
+            list-style: none;
+        }
+
+        .nav__links li {
+            display: inline-block;
+
+        }
+
+        .nav__links li a {
+            transition: all 0.3s ease 0s;
+            padding: 0 20px;
+        }
+
+        .nav__links li a:hover {
+            color: #0088a9;
+        }
+
+        .nav_select {
+            position: relative;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .nav_button {
+            position: relative;
+        }
+
+        button {
+            padding: 9px 25px;
+            background-color: rgba(0, 136, 169, 1);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            margin-left: 20px;
+        }
+
+        button:hover {
+            background-color: rgba(0, 136, 169, 1);
+        }
+    </style>
+
+    <img class="logo" src="{% static 'emergo.png' %}" alt="logo " height=50px > 
+    <div class="nav-wrapper">
+        <div></div>
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="javascript:callUrl();">Top 10 Articles</a>
+
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav_select">
+        <select class="navbar-select" id="lang-option">
+        </select>
+    </div>
+    <div class="nav_select">
+        <select class="navbar-select" id="country-option">
+        </select>
+    </div>
+    <div class="nav_button"><a href="http://127.0.0.1:8000/" class="cta">
+            <button>Search</button>
+        </a></div>
+
+    </div>
+
+    <script>
+        country_codes = {
+            "United States": "us",
+    "Australia": "au",
+    "Brazil": "br",
+    "Canada": "ca",
+    "China": "cn",
+    "Egypt": "eg",
+    "France": "fr",
+    "Germany": "de",
+    "Greece": "gr",
+    "Hong Kong": "hk",
+    "India": "in",
+    "Ireland": "ie",
+    "Israel": "il",
+    "Italy": "it",
+    "Japan": "jp",
+    "Netherlands": "nl",
+    "Norway": "no",
+    "Pakistan": "pk",
+    "Peru": "pe",
+    "Philippines": "ph",
+    "Portugal": "pt",
+    "Romania": "ro",
+    "Russian Federation": "ru",
+    "Singapore": "sg",
+    "Spain": "es",
+    "Sweden": "se",
+    "Switzerland": "ch",
+    "Taiwan": "tw",
+    "Ukraine": "ua",
+    "United Kingdom": "gb",
+}
+
+        var language_codes = {
+            "English": "en",
+    "Arabic": "ar",
+    "Chinese": "zh",
+    "Dutch": "nl",
+    "French": "fr",
+    "German": "de",
+    "Greek": "el",
+    "Hebrew": "he",
+    "Hindi": "hi",
+    "Italian": "it",
+    "Japanese": "ja",
+    "Malayalam": "ml",
+    "Marathi": "mr",
+    "Norwegian": "no",
+    "Portuguese": "pt",
+    "Romanian": "ro",
+    "Russian": "ru",
+    "Spanish": "es",
+    "Swedish": "sv",
+    "Tamil": "ta",
+    "Telugu": "te",
+    "Ukrainian": "uk"
+};
+        var selectElement = document.getElementById('lang-option');
+
+        for (var text in language_codes) {
+            var option = document.createElement('option');
+            option.value = language_codes[text];  
+            option.textContent = text;    
+            selectElement.appendChild(option);
+        }
+        var selectCountryElement = document.getElementById('country-option');
+
+for (var text in country_codes) {
+    var option = document.createElement('option');
+    option.value = country_codes[text];  
+    option.textContent = text;    
+    selectCountryElement.appendChild(option);
+}
+function callUrl(){
+    console.log("hello")
+        const n = 10 
+        const lnOption = document.getElementById("lang-option");
+        const countryOption = document.getElementById("country-option");
+          const selectedlnOption = lnOption.value;
+        const selectedCountryOption = countryOption.value;
+        window.location.href = `/article?n=${n}&ln=${selectedlnOption}&country=${selectedCountryOption}`;
+}
+
+    </script>
+</header>

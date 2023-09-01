@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}News Articles{% endblock %}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .wrapper{
+        display: flex;
+      }
+      .page-title{
+        align-items: center;
+        font-size: larger;
+      }
+      .article {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .article img {
+        float: right;
+        max-width: 200px;
+        max-height: 150px;
+        margin-left: 10px;
+      }
+
+      .article h2 {
+        margin-top: 0;
+      }
+      .article p {
+        margin: 5px 0;
+      }
+      .article em {
+        margin-top: 10px;
+        font-style: italic;
+        font-size: small ;
+      }
+      .article-content {
+        margin-top: 10px;
+      }
+      .article-description {
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'nav_bar.html' %}
+
+    <div class="page-title" ><h1>News Articles</h1></div>
+    <ul>
+      {% for article in articles %}
+      <li class="article">
+        <div class="wrapper">
+            <div>
+          <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
+          <div class="article-description">{{ article.description }}</div>
+          <div><em>Published Date: {{ article.publishedAt }}</em></div>
+          <div class="article-content">{{ article.content}}...</div>
+          <div>
+              <em>
+                Source:
+                  <a href="{{ article.source.url }}">{{ article.source.name }}</a></em>
+                </div>
+            </div>
+            <div><img src="{{ article.image }}" alt="Article Image" /></div>
+                
+            </div>
+            </li>
+            {% endfor %}
+    </ul>
+  </body>
+</html>
