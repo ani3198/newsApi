@@ -32,7 +32,7 @@ Django News App is a web application built with Django that fetches and displays
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/django-news-app.git
+    git clone https://github.com/ani3198/newsApi.git
     ```
 
 2. Navigate to the project directory:
