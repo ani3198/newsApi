@@ -64,7 +64,7 @@ Django News App is a web application built with Django that fetches and displays
 
 ## API Documentation
 
-For detailed API documentation, please refer to the [API Documentation](API-Documentation.md) file.
+For detailed API documentation, please refer to the [API Documentation](News_Api_Doc.md.md) file.
 
 ## Caching
 
