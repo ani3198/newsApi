@@ -1,8 +1,4 @@
-# newsApi
 
-Certainly! Below is a sample `README.md` file for your Django News App project.
-
----
 
 # Django News App
 
