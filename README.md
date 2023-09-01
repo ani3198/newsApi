@@ -13,8 +13,7 @@ Certainly! Below is a sample `README.md` file for your Django News App project.
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
 - [Caching](#caching)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
