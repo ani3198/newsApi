@@ -70,14 +70,3 @@ For detailed API documentation, please refer to the [API Documentation](API-Docu
 
 The application uses Django's caching mechanism to cache responses from the `/article` and `/search_article` endpoints for 15 minutes.
 
-## Contributing
-
-Contributions are welcome! Please read the [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
-
----
-
-Feel free to modify this template to better suit the specifics of your project.
